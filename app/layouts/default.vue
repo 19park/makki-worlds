@@ -43,5 +43,6 @@ export default {
   background-color: #fafafa;
   background-image: url('~/makki.jpg');
   background-size: 'cover';
+  background-repeat: no-repeat;
 }
 </style>
