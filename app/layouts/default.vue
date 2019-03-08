@@ -42,7 +42,7 @@ export default {
   padding-top: 0;
   background-color: #fafafa;
   background-image: url('~/makki.jpg');
-  background-size: 'cover';
+  background-size: cover;
   background-repeat: no-repeat;
 }
 </style>

@@ -18,56 +18,61 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import dayjs from 'dayjs'
-import { uniq } from '~/utils/uniq'
+  import { mapGetters } from 'vuex'
+  import dayjs from 'dayjs'
+  import { uniq } from '~/utils/uniq'
 
-export default {
-  data() {
-    return {
-      body: ''
-    }
-  },
-  computed: {
-    ...mapGetters(['user'])
-  },
-  methods: {
-    async doPost() {
-      if (!this.body) return
-      await this.$store.dispatch('ADD_POST', {
-        id: `${3000000000 + dayjs().unix()}-${uniq()}`,
-        email: this.user.email,
-        body: this.body,
-        createdAt: 3000000000 + dayjs().unix()
-      })
-      this.body = ''
+  export default {
+    data () {
+      return {
+        body: ''
+      }
+    },
+    computed: {
+      ...mapGetters(['user'])
+    },
+    methods: {
+      async doPost () {
+        if (!this.body) return
+        await this.$store.dispatch('ADD_POST', {
+          id: `${3000000000 + dayjs().unix()}-${uniq()}`,
+          email: this.user.email,
+          body: this.body,
+          createdAt: 3000000000 + dayjs().unix()
+        })
+        this.body = ''
+      }
     }
   }
-}
 </script>
 
 <style scoped>
   .title {
     background-color: #fff;
-    padding: 20px 0;
+    padding: 20px 10px;
     margin-bottom: 0 !important;
+    transition: font-size .3s;
   }
 
-.field-wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border-top: solid 32px #fafafa;
-}
+  @media all and (max-width:767px) {
+    .title { font-size: 1.2rem; }
+  }
 
-.field {
-  margin-bottom: 16px;
-  padding: 16px;
-  background: #fff;
-  border: solid 1px #e6e6e6;
-}
+  .field-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-top: solid 32px #fafafa;
+  }
 
-.button.is-primary {
-  background: #1da1f2;
-}
+  .field {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #fff;
+    border: solid 1px #e6e6e6;
+  }
+
+  .button.is-primary {
+    background: #1da1f2;
+  }
 </style>

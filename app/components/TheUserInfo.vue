@@ -17,7 +17,7 @@
       </div>
     </template>
     <div class="mcard media media-user" v-else>
-      <a class="button is-primary" @click="callAuth">Signin with Google</a>
+      <a class="button is-primary" @click="callAuth">구글 로그인하깅</a>
     </div>
   </div>
 </template>
@@ -49,7 +49,8 @@ export default {
 }
 
 .userinfo .media-user {
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   height: 240px;
 }
 
@@ -62,6 +63,7 @@ export default {
 @media (min-width: 768px) {
   .userinfo .media-user {
     position: fixed;
+    width: 25%;
     top: 32px;
     padding-top: 0;
   }

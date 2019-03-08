@@ -17,6 +17,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@firebase/firestore": "^1.0.6",
     "autolinker": "^1.6.0",
     "bulma": "0.6.1",
     "dayjs": "^1.8.2",
